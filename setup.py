@@ -5,15 +5,15 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "smartlogginglevel",
+    name = "smartlogging",
     version = "0.1",
     author = "Jarek Lipski",
     author_email = "pub@loomchild.net",
-    description = ("Smart logging level."),
+    description = ("Smart logging."),
     license = "MIT",
     keywords = "logging",
-    url = "https://github.com/loomchild/smartlogginglevel",
-    py_modules=['smartlogginglevel'],
+    url = "https://github.com/loomchild/smartlogging",
+    py_modules=['smartlogging'],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
