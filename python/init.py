@@ -10,6 +10,6 @@ handler.setLevel(logging.NOTSET)
 formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s: %(message)s')
 handler.setFormatter(formatter)
 
-bhandler = burstlogging.BurstHandler(target=handler, normalLevel=logging.INFO, burstLevel=logging.ERROR, capacity=4)
+bhandler = burstlogging.BurstHandler(target=handler, emitLevel=logging.INFO, burstLevel=logging.ERROR, capacity=4)
 logger.handlers = []
 logger.addHandler(bhandler)
