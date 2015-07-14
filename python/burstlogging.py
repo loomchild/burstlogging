@@ -17,8 +17,8 @@ class BurstHandler(Handler):
         self.capacity = capacity
         self.threshold = threshold
         self.buffer = deque()
-        #TODO: check if target level is >= level, raise exception if not
-        #TODO: check that burst >= level
+        #TODO: check if target handler level is >= level
+        #TODO: check that burstLevel >= emitLevel >= level
 
     def trim(self, size):
         if len(self.buffer) > size:
@@ -49,8 +49,11 @@ class BurstHandler(Handler):
         self.trim(self.capacity)
         self.burst()
          
-    def close(self):
+    def flush(self):
         self.trim(0)
+ 
+    def close(self):
+        self.flush()
         self.acquire()
         try:
             self.target = NullHandler()
