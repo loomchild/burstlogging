@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import logging
 from logging import Handler, NullHandler
 from collections import deque
