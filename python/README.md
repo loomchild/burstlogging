@@ -16,7 +16,7 @@ values are shown below):
 
 Where:
 * _target_ - actual handler that will format the logs; note that it will also
-  filter them based on its level
+  filter them based on its own level
 * _level_ - log level to be emitted only during burst
 * _emitLevel_ - log level to be always emitted
 * _burstLevel_ - log level to cause a burst
@@ -25,5 +25,5 @@ Where:
 * _threshold_ - part of buffer to be purged on overflow; smaller value
   increases performance, but may cause some debug logs to be lost
 
-See a complete example in demo.py.
+See a complete example in [demo.py](demo.py).
 
