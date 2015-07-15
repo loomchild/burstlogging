@@ -9,15 +9,13 @@ However, when an error occurs, previously gathered debug messages are emitted
 as well (burst mode).
 
 ## Ports
-For language specific usage see README files for individual ports:
+For programming language specific usage see README files for individual ports:
 * [Python](python/README.md)
-* [Java](java/README.md)
 
 ## Details
 Not much risk because critical crashes will be logged immediately anyway.
 
 ## Ideas
-
 Preserves linearity. Maybe this is not required when using a database for storing logs 
 and dealing with multithreaded application where chronology does not make much sense.
 

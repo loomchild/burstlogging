@@ -19,6 +19,7 @@ class BurstHandler(Handler):
         self.buffer = deque()
         #TODO: check if target handler level is >= level
         #TODO: check that burstLevel >= emitLevel >= level
+        #TODO: rename capacity and threshold to functional roles - before and after context like in grep
 
     def trim(self, size):
         if len(self.buffer) > size:
@@ -45,6 +46,8 @@ class BurstHandler(Handler):
                 self.release()
 
     def emit(self, record):
+        #TODO: record as param not added to buffer, first burst then trim
+        #TODO: activate burst mode counter after an error
         self.buffer.append(record)
         self.trim(self.capacity)
         self.burst()
