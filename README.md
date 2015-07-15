@@ -15,13 +15,9 @@ For programming language specific usage see README files for individual ports:
 ## Details
 Not much risk because critical crashes will be logged immediately anyway.
 
-## Ideas
 Preserves linearity. Maybe this is not required when using a database for storing logs 
 and dealing with multithreaded application where chronology does not make much sense.
 
-Could potentially log debug messages also after an error to give a complete context.
-
-Use separate process communicating over a socket like syslog to become 
-crash resistant and language independent.
-
-Specify context as number of seconds instead of number of messages
+## Ideas
+This is a new project. To see and discuss more ideas about burst logging see
+[Enhancements](https://github.com/loomchild/burstlogging/labels/enhancement).
