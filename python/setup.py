@@ -1,8 +1,7 @@
+#!/usr/bin/env python
+
 import os
 from setuptools import setup
-
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
     name = "burstlogging",
@@ -14,7 +13,12 @@ setup(
     keywords = "logging",
     url = "https://github.com/loomchild/burstlogging",
     py_modules=['burstlogging'],
-    long_description=read('README.md'),
+    long_description="""
+BurstLogging is a smart logging library that allows emitting detailed
+debug information in production environment only when needed.
+
+See project website https://github.com/loomchild/burstlogging for more details.
+    """,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
