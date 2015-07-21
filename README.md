@@ -27,7 +27,7 @@ When an error doesn't occur only informational messages are logged and old debug
 Immediate risk when buffering log messages is the program crashing before being able to store them. 
 The problem is not critical because recognised error condition triggers an immediate dump. 
 Danger can be further reduced by running the logging system in a separate process and listening on a socket 
-(see enhancement #5 (https://github.com/loomchild/burstlogging/issues/5)).
+(see enhancement loomchild/burstlogging#5).
 
 BurstLogging preserves chronological order of messages by dropping debug messages that are older than the logged message. 
 This feature may not be required when logs are stored in a database instead of a flat file. 
