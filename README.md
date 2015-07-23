@@ -25,7 +25,7 @@ It works by temporarily keeping all logs in a buffer. When an error occurs they 
 When an error doesn't occur only informational messages are logged and old debug messages are dropped.
 
 Immediate risk when buffering log messages is the program crashing before being able to store them. 
-The problem is not critical because recognised error condition triggers an immediate dump. 
+The problem is not that critical because recognised error condition triggers an immediate dump. 
 Danger can be further reduced by running the logging system in a separate process and listening on a socket 
 (see enhancement [#5](https://github.com/loomchild/burstlogging/issues/5)).
 
