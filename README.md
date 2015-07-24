@@ -8,10 +8,46 @@ During normal operation only informational messages are logged.
 However, when an error occurs, previously gathered debug messages are logged 
 as well.
 
-## Ports
-For programming language specific usage see README files for individual ports:
-* [Python](python/README.md)
-* [Java](java/README.md)(work in progress)
+## Installation
+The package is on PyPI, to install it type:
+
+    pip install burstlogging
+
+## Usage
+
+### As a separate process
+This is the preferred way of using BurstLogging. 
+
+### As a Python Log Handler
+This method is an alternative method of using BurstLogging. Benefits are:
+* simplicity - there is only only one process to manage
+* performance - there is potentially no need to format log messages that won't be displayed (separate process 
+  implementation will be improved in the future to reduce this difference)
+and the drawbacks are:
+* it is only available in Python programming language
+* when the main process crashes some logs may be lost in the memory buffer, which will make error analysis harder
+
+To use it all you need to do is to create and configure a BurstHandler decorator 
+(only _target_ is necessary, other parameters are optional and their default 
+values are shown below):
+
+	BurstHandler(target=handler, 
+			level=logging.NOTSET, emitLevel=logging.INFO, burstLevel=logging.ERROR,
+			capacity=1000, threshold=0.8)
+
+Where:
+* _target_ - actual handler that will format the logs; note that it will also
+  filter them based on its own level
+* _level_ - log level to be emitted only during burst
+* _emitLevel_ - log level to be always emitted
+* _burstLevel_ - log level to cause a burst
+* _capacity_ - size of a log buffer; when it's too small then some debug 
+  logs may be lost, when it's too big logs will be emitted with a delay
+* _threshold_ - part of buffer to be purged on overflow; smaller value
+  increases performance, but may cause some debug logs to be lost
+
+### Demos
+See a complete usage examples in [demo](demo/).
 
 ## Details 
 Logging is always a compromise between storing everything and saving disk space / performance. 
