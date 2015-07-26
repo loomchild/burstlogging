@@ -38,6 +38,9 @@ time.sleep(0.1)
 logger.debug("07 Log")
 time.sleep(0.1)
 logger.debug("08 Log")
+time.sleep(0.1)
+logger.warn("09 Log")
+bhandler.flush()
 
 print("An error occurs which causes burst; "
         + "note that although some messages are lost due to insufficient buffer capacity, " 
