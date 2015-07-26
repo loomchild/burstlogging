@@ -67,7 +67,9 @@ Danger can be further reduced by running the logging system in a separate proces
 
 BurstLogging preserves chronological order of messages by dropping debug messages that are older than the logged message. 
 This feature may not be required when logs are stored in a database instead of a flat file. 
-Chronological order also does not make much sense when dealing with multithreaded application.
+Chronological order also does not make much sense when dealing with multithreaded or multiprocess application.
+
+No performance penalty because message is formatted after being emitted (see LogRecord class).
 
 ## Ideas
 This is a relatively new constantly evolving project. To see and discuss ideas see
