@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 
+import sys
+sys.path.append("..")
+
 import time
 import logging
 import burstlogging
+
 
 print("Configure logging")
 logger = logging.getLogger()
@@ -19,43 +23,39 @@ logger.handlers = []
 logger.addHandler(bhandler)
 
 print("Normal operation, no errors - only INFO messages and above are emitted")
-logger.debug("1 Log")
+logger.debug("01 Log")
 time.sleep(0.1)
-logger.debug("2 Log")
+logger.debug("02 Log")
 time.sleep(0.1)
-logger.info("3 Log")
+logger.info("03 Log")
 time.sleep(0.1)
-logger.debug("4 Log")
+logger.debug("04 Log")
 time.sleep(0.1)
-logger.debug("5 Log")
+logger.debug("05 Log")
 time.sleep(0.1)
-logger.info("6 Log")
+logger.info("06 Log")
 time.sleep(0.1)
-logger.debug("7 Log")
+logger.debug("07 Log")
 time.sleep(0.1)
-logger.debug("8 Log")
-time.sleep(0.1)
-logger.warn("9 Log")
-bhandler.flush()
+logger.debug("08 Log")
 
 print("An error occurs which causes burst; "
         + "note that although some messages are lost due to insufficient buffer capacity, " 
         + "their chronological order is maintained")
 time.sleep(1)
-logger.debug("1 Log")
+logger.debug("09 Log")
 time.sleep(0.1)
-logger.debug("2 Log")
+logger.debug("10 Log")
 time.sleep(0.1)
-logger.info("3 Log")
+logger.info("11 Log")
 time.sleep(0.1)
-logger.debug("4 Log")
+logger.debug("12 Log")
 time.sleep(0.1)
-logger.debug("5 Log")
+logger.debug("13 Log")
 time.sleep(0.1)
-logger.info("6 Log")
+logger.info("14 Log")
 time.sleep(0.1)
-logger.debug("7 Log")
+logger.debug("15 Log")
 time.sleep(0.1)
-logger.error("8 Log")
-bhandler.flush()
+logger.error("16 Log")
 
