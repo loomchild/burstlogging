@@ -37,7 +37,7 @@ Where:
 See a complete usage examples in [demo.py](demo.py).
 
 ## Details 
-Logging is always a compromise between storing everything and saving disk space / performance. 
+Logging is always a compromise between storing everything and saving disk space / maintaining good performance. 
 
 Some errors occur only in production or are very difficult to reproduce. 
 
