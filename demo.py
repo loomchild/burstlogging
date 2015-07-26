@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-sys.path.append("..")
-
 import time
 import logging
 import burstlogging
