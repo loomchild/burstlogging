@@ -37,8 +37,7 @@ Where:
 * _threshold_ - part of buffer to be purged on overflow; smaller value
   increases performance, but may cause some debug logs to be lost
 
-### Demo
-See a complete usage examples in [demo.py](demo.py).
+See a complete usage example in [demo.py](demo.py).
 
 ## Ideas
 This is a relatively new constantly evolving project. To see, propose and discuss ideas visit
